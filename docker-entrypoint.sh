@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-if ! [ -z ${DOWNSTREAM_HOSTS+x} ] && ! [ -e /etc/nginx/conf.d/realip.conf ] &&; then
+if ! [ -z ${DOWNSTREAM_HOSTS+x} ] && ! [ -e /etc/nginx/conf.d/realip.conf ]; then
 
   IFS=', ' read -r -a array <<< "${DOWNSTREAM_HOSTS}"
   echo '# Downstream hosts (real-ip)' >> /etc/nginx/conf.d/realip.conf;
